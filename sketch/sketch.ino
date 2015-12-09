@@ -2,7 +2,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #define PIN 6
-#define lightCount 91
+#define lightCount 91   //this is for 90 pixels i.e. a 30 pixel strip and a 60 pixel strip 
 
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = pin number (most are valid)
@@ -38,10 +38,10 @@ void loop() {
   fadeCol = 0;
 total = 0;
 
-  for (int i = 0; i < 20; i++){
+  for (int i = 0; i < 20; i++){   
       counter = 0;
        do{
-      vol = analogRead(A0);
+      vol = analogRead(A0);  //read signal from port A0
  
       counter = counter + 1;
       if (counter > 500){
@@ -57,7 +57,7 @@ total = 0;
   vol = total /40;
 //Serial.println(vol);
   
-  vol = map(vol,0,100,0,20);
+  vol = map(vol,0,100,0,20);  //(volume, lower limit being read, upper limit being read, lower limit being output, upper limit being output) 
   
   
   if (volLast > vol) {
